@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Animal Adoption Portal</title>
+    <style>
+        /* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header ul li a:hover {
+    color: #f39c12;
+}
+
+/* About Section */
+#about {
+    background: linear-gradient(135deg, #c3ecb2, #67b26f);
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 5px solid #f39c12;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#about p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Our Team Section */
+#our-team {
+    background: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#our-team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #f4f4f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 250px;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+/* Why Choose Us Section */
+#why-choose-us {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#why-choose-us h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+#why-choose-us h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #f39c12;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 30px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature i {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.feature:hover h3 {
+    color: #f39c12;
+}
+
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature {
+        max-width: 100%;
+    }
+}
+
+
+/* Testimonials Section */
+#testimonials {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#our-team">Our Team</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Welcome to our Animal Adoption Portal. We are dedicated to helping animals find loving, forever
+                    homes. Our mission is to connect compassionate individuals with pets in need, providing them with
+                    the love and care they deserve.</p>
+                <p>We work tirelessly with local shelters and rescue organizations to ensure that each animal is given a
+                    second chance at life. Whether you're looking to adopt a playful puppy, a cuddly kitten, or a calm
+                    senior pet, we are here to help you find the perfect match.</p>
+                <p>Join us in our mission to save lives, one adoption at a time.</p>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section id="our-team">
+            <div class="container">
+                <h2>Meet Our Team</h2>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="IMAGEE/people1.jpg" alt="Team Member 1">
+                        <h3>Emma Johnson</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="IMAGEE/people2.jpg" alt="Team Member 2">
+                        <h3>John Smith</h3>
+                        <p>Animal Behaviorist</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="IMAGEE/people3.jpg" alt="Team Member 3">
+                        <h3>Sarah Lee</h3>
+                        <p>Adoption Coordinator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-heart"></i>
+                        <h3>Compassionate Care</h3>
+                        <p>We work with love and empathy to ensure every pet finds a family that truly cares.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-paw"></i>
+                        <h3>Wide Variety</h3>
+                        <p>From playful pups to calm senior pets, we offer a wide range of companions.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Trusted Process</h3>
+                        <p>Our streamlined adoption process ensures transparency and ease.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Supportive Team</h3>
+                        <p>Our team guides you every step of the way to ensure a perfect match.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                <h2>What People Say</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p>"Adopting through this portal was the best decision ever! Our new furry friend has brought so
+                            much joy into our lives."</p>
+                        <h4>- Lisa M.</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The process was smooth and stress-free. The team was incredibly supportive every step of the
+                            way."</p>
+                        <h4>- Mark D.</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"I highly recommend this portal to anyone looking to adopt a pet. They genuinely care about
+                            the animals and their well-being."</p>
+                        <h4>- Chloe T.</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Animal Adoption Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

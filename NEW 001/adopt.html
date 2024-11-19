@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Container for Adoption Section */
+        #adoption {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .adoption-container h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .animal-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Animal Card Styles */
+        .animal-card {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .animal-card .animal-info {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .animal-card .animal-info h3 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+
+        .animal-card .animal-info p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .animal-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .animal-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .animal-card button {
+            background-color: #00ffb3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .animal-card button:hover {
+            background-color: #f57c00;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            width: 60%;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal-body img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Fade-in effect for Modal */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="adoption">
+        <div class="adoption-container">
+            <h2>Adopt and Save Endangered Animals</h2>
+            <div class="animal-cards">
+                <!-- Animal Card 1 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/tiger.jpg" alt="Tiger">
+                    <div class="animal-info">
+                        <h3>Bengal Tiger</h3>
+                        <p>Critically Endangered</p>
+                        <button class="learn-more" data-animal="tiger">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 2 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/gientpanda.jpg" alt="Panda">
+                    <div class="animal-info">
+                        <h3>Giant Panda</h3>
+                        <p>Vulnerable</p>
+                        <button class="learn-more" data-animal="panda">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 3 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/elepant.jpg" alt="Elephant">
+                    <div class="animal-info">
+                        <h3>Asian Elephant</h3>
+                        <p>Endangered</p>
+                        <button class="learn-more" data-animal="elephant">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 4 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/cheetah.jpg" alt="Cheetah">
+                    <div class="animal-info">
+                        <h3>Cheetah</h3>
+                        <p>Vulnerable</p>
+                        <button class="learn-more" data-animal="cheetah">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 5 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/gorilla.jpg" alt="Gorilla">
+                    <div class="animal-info">
+                        <h3>Mountain Gorilla</h3>
+                        <p>Endangered</p>
+                        <button class="learn-more" data-animal="gorilla">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 6 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/jaguar.jpg" alt="Jaguar">
+                    <div class="animal-info">
+                        <h3>Jaguar</h3>
+                        <p>Near Threatened</p>
+                        <button class="learn-more" data-animal="jaguar">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 7 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/Polar Bear.jpg" alt="Polar Bear">
+                    <div class="animal-info">
+                        <h3>Polar Bear</h3>
+                        <p>Vulnerable</p>
+                        <button class="learn-more" data-animal="polar-bear">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 8 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/Bornean Orangutan.jpg" alt="Orangutan">
+                    <div class="animal-info">
+                        <h3>Bornean Orangutan</h3>
+                        <p>Critically Endangered</p>
+                        <button class="learn-more" data-animal="orangutan">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 9 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/Black Rhino.jpg" alt="Rhino">
+                    <div class="animal-info">
+                        <h3>Black Rhino</h3>
+                        <p>Critically Endangered</p>
+                        <button class="learn-more" data-animal="rhino">Learn More</button>
+                    </div>
+                </div>
+                <!-- Animal Card 10 -->
+                <div class="animal-card">
+                    <img src="IMAGEE/Green Sea Turtle.jpg" alt="Sea Turtle">
+                    <div class="animal-info">
+                        <h3>Green Sea Turtle</h3>
+                        <p>Endangered</p>
+                        <button class="learn-more" data-animal="sea-turtle">Learn More</button>
+                    </div>
+                </div>
+                <!-- Add more animals if needed -->
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="animal-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <h3 id="animal-name"></h3>
+                    <img id="animal-image" src="" alt="">
+                    <p id="animal-details"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Modal Elements
+            const modal = document.getElementById('animal-modal');
+            const modalContent = document.querySelector('.modal-content');
+            const closeModalBtn = document.querySelector('.close-modal');
+            const animalName = document.getElementById('animal-name');
+            const animalImage = document.getElementById('animal-image');
+            const animalDetails = document.getElementById('animal-details');
+        
+            // Animal data with basic details
+            const animalInfo = {
+                tiger: {
+                    name: "Bengal Tiger",
+                    details: "The Bengal Tiger is critically endangered, with fewer than 2,500 individuals remaining in the wild.",
+                    image: "IMAGEE/tiger.jpg"
+                },
+                panda: {
+                    name: "Giant Panda",
+                    details: "The Giant Panda is vulnerable, with around 1,800 individuals living in the wild.",
+                    image: "IMAGEE/gientpanda.jpg"
+                },
+                elephant: {
+                    name: "Asian Elephant",
+                    details: "Asian Elephants are endangered, with only about 50,000 individuals left in the wild.",
+                    image: "IMAGEE/elepant.jpg"
+                },
+                cheetah: {
+                    name: "Cheetah",
+                    details: "Cheetahs are vulnerable, with a population decline due to habitat loss and poaching.",
+                    image: "IMAGEE/cheetah.jpg"
+                },
+                gorilla: {
+                    name: "Mountain Gorilla",
+                    details: "Mountain Gorillas are endangered, with less than 1,000 individuals remaining.",
+                    image: "IMAGEE/gorilla.jpg"
+                },
+                jaguar: {
+                    name: "Jaguar",
+                    details: "Jaguars are near threatened, primarily due to habitat loss and hunting.",
+                    image: "IMAGEE/jaguar.jpg"
+                },
+                polar_bear: {
+                    name: "Polar Bear",
+                    details: "Polar Bears are vulnerable, with a decreasing population due to climate change.",
+                    image: "IMAGEE/Polar Bear.jpg"
+                },
+                orangutan: {
+                    name: "Bornean Orangutan",
+                    details: "Bornean Orangutans are critically endangered, with deforestation threatening their habitat.",
+                    image: "IMAGEE/Bornean Orangutan.jpg"
+                },
+                rhino: {
+                    name: "Black Rhino",
+                    details: "Black Rhinos are critically endangered due to poaching and habitat destruction.",
+                    image: "IMAGEE/Black Rhino.jpg"
+                },
+                sea_turtle: {
+                    name: "Green Sea Turtle",
+                    details: "Green Sea Turtles are endangered, with their population decreasing due to fishing and habitat loss.",
+                    image: "IMAGEE/Green Sea Turtle.jpg"
+                }
+            };
+        
+            // Show the modal with animal details
+            function showModal(animalKey) {
+                const animal = animalInfo[animalKey];
+                animalName.innerHTML = animal.name;
+                animalImage.src = animal.image;
+                animalDetails.innerHTML = `<p>${animal.details}</p>`; // Simple details
+        
+                modal.style.display = "flex"; // Show modal
+            }
+        
+            // Close the modal
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = "none";
+            });
+        
+            // When the user clicks anywhere outside the modal, close it
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        
+            // Add event listeners to each "Learn More" button
+            const learnMoreButtons = document.querySelectorAll('.learn-more');
+            learnMoreButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const animalKey = button.getAttribute('data-animal');
+                    showModal(animalKey);
+                });
+            });
+        
+            // Add animations for animal cards
+            const animalCards = document.querySelectorAll('.animal-card');
+            animalCards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    card.style.transform = 'scale(1.05)';
+                    card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.2)';
+                });
+                card.addEventListener('mouseout', () => {
+                    card.style.transform = 'scale(1)';
+                    card.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        });
+        
+    </script>
+
+</body>
+
+</html>

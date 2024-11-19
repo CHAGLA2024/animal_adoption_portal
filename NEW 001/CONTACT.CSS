@@ -1,0 +1,53 @@
+#contact{
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+#contact h2{
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+#contact p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color:#333
+}
+.contact-card{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+.group-form{
+    margin-bottom: 20px;
+    text-align: left;
+}
+.group-form label{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color:#333
+}
+.group-form input,
+.group-form text area{
+width: 96%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 16px;
+font-size: 16px;
+}
+.group-form textarea{
+    height:150px;
+    resize: none;
+    
+}
+.btn-message{
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff704d;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
