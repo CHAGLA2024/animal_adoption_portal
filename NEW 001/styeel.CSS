@@ -1,0 +1,331 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+header {
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+header ul {
+    padding: 0;
+    list-style: none;
+}
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+header #branding {
+    float: left;
+}
+header #branding h1 {
+    margin: 0;
+}
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+header .highlight, header .current a {
+    color: #f73b08;
+    font-weight: bold;
+}
+header a:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+.animal-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+.animal {
+    background: #ffffff;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.animal:hover {
+    transform: scale(1.05);
+}
+.animal img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.animal h2 {
+    margin-top: 10px;
+}
+.animal p {
+    margin: 10px 0;
+}
+.animal .contact {
+    margin-top: 10px;
+    font-weight: bold;
+}
+footer {
+    background-color: #151515;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+.footer-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.footer-content p {
+    font-size: 16px;
+}
+.footer-content .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.footer-content .socials li {
+    margin: 0 10px;
+}
+.footer-content .socials a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+.footer-content .socials a:hover {
+    color: #ff6347;
+}
+.footer-bottom {
+    background-color: #9e9e9e;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+.socials img {
+    width: 45px;
+    transition: transform 0.3s ease;
+}
+.socials img:hover {
+    transform: scale(1.08);
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Your Pet Adoption Journey Section */
+.adoption-journey {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+.adoption-journey h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.adoption-journey p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+.journey-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.journey-step {
+    width: 22%;
+    margin: 10px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+}
+.journey-step h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.journey-step .icon {
+    font-size: 40px;
+    color: #43e97b;
+    margin-bottom: 15px;
+}
+.toggle-content {
+    display: none;
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+.toggle-title {
+    display: inline-block;
+    padding-right: 30px;
+}
+.toggle-title:after {
+    content: "\002B"; /* Plus symbol */
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.toggle-title.active:after {
+    content: "\2212"; /* Minus symbol */
+}
+.journey-step:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation for Toggle */
+.toggle-title.active + .toggle-content {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* How It Works Section */
+.how-it-works {
+    background: linear-gradient(135deg, #e3ffe7 0%, #d9e7ff 100%);
+    padding: 60px 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    color: #2a2a72;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.how-it-works p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.step {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(25% - 30px);
+    min-width: 260px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    color: #2a2a72;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.step h3::before {
+    content: "✔";
+    font-size: 1.3rem;
+    color: #43e97b;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.step p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.step:hover h3 {
+    color: #43e97b;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #2a2a72, #43e97b);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.step:hover::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 100%;
+    }
+}
